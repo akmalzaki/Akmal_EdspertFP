@@ -10,70 +10,98 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <!-- Alpine js -->
     <script src="//unpkg.com/alpinejs"></script>
-    <title>Document</title>
+    <!-- Icon -->
+    <link rel="icon" href="./assets/logo edspert 1.svg">
+    <title>Edspert</title>
 </head>
 <body class="m-0 p-0 ">
     
     <nav class="px-2 py-8" x-data="{open : false}">
         <div class="container mx-auto "> 
-            <div class="flex justify-between items-center">
-                <a href="index.html">
+            <div class="flex justify-between items-center ">
+                <img @click="open = !open" src="./assets/hamburger.png" style="height:28px; cursor:pointer;" class=" sm:hidden order-2 sm:order-1">
+                <!-- logo -->
+                <div class="flex items-center gap-10">
+                <a href="#">
             <img src="./assets/logo edspert 1.svg" class="order-1 sm:order-2 cursor-pointer">
                 </a>
-            <img @click="open = !open" src="./assets/hamburger.png" style="height:28px; cursor:pointer;" class=" sm:hidden order-2 sm:order-1">
+            
+            <!-- menu -->
             <div class=" order-2 hidden lg:block">
-                <ul class="flex gap-2 ">
-                   <li class="text-grey font-semibold text-base">
+                <ul class="flex gap-9 ">
+                   <li class="text-grey font-semibold text-base hover:text-black duration-500">
                     <a href="#">Home</a>
                     </li>
                    
-                   <li class="relative flex justify-center">
-                    <a class="text-grey font-semibold text-base" href="#">Products</a>
+                    <li class="relative group">
+                        <!-- Dropdown Trigger with arrow icon -->
+                        <a class="flex items-center text-grey font-semibold text-base group-hover:text-black duration-500" href="#">
+                            Products
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
                     </li>
 
-                   <li class="text-grey font-semibold text-base">
-                    <a href="#">Resources</a>
+                    <li class="relative group">
+                        <!-- Dropdown Trigger with arrow icon -->
+                        <a class="flex items-center text-grey font-semibold text-base group-hover:text-black duration-500" href="#">
+                            Resources
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
                     </li>
 
-                   <li class="text-grey font-semibold text-base">
+                   <li class="text-grey font-semibold text-base hover:text-black duration-500">
                     <a href="#">Pricing</a>
                     </li>
                 </ul>
             </div>
+            </div>
+            <!-- profile -->
             <div class="order-3 hidden sm:block">
-                <button class="bg-white px-2.5 py-2.5 text-grey font-semibold text-base"> Login </button>
-                <button class="bg-[#7F56D9] px-2.5 py-2.5 border rounded-lg text-white font-semibold text-base"> Sign up </button>
+                <button class=" px-2.5 py-2.5 rounded-lg text-grey font-semibold text-base hover:bg-[#7F56D9] hover:text-white duration-700"> Login </button>
+                <button class="bg-[#7F56D9] px-2.5 py-2.5 rounded-lg text-white font-semibold text-base hover:bg-white hover:text-[#7F56D9] duration-700"> Sign up </button>
             </div>
             </div>
             <!-- Mobile Navigation -->
             <div  class="fixed mx-0 bottom-0 right-0 left-0 bg-white p-4 border lg:hidden z-50">
                 <ul class="flex justify-between">
                     <li>
+                        <a href="#">
                         <button class="flex justify-center flex-col items-center gap-1"> 
                         <ion-icon name="home" class="text-2xl"></ion-icon>
-                        <span class="text-base font-semibold text-grey"> Home </span> 
+                        <span class="text-sm font-semibold text-grey"> Home </span> 
                         </button>
+                        </a>
                     </li>
 
                     <li>
+                        <a href="https://edspert.id/bootcamp">
                         <button class="flex justify-center flex-col items-center gap-1"> 
                         <ion-icon name="basket" class="text-2xl"></ion-icon>
-                        <span class="text-base text-grey font-semibold"> Products </span> 
+                        <span class="text-sm text-grey font-semibold"> Products </span> 
                         </button>
+                        </a>
                     </li>
 
                     <li>
+                        <a href="https://linkin.bio/edspert.id?fbclid=PAZXh0bgNhZW0CMTEAAaa5fE113LP2wgm3c4OdVZcOsb5qHDg4Stkxs8o69Zr8mPLn87G0jBq9Beg_aem_AcqlKrpT9QPv6dActIceO9ko7k4Wbf-BYYw7vufYeXb0MCUkTKqVg5IM-OREcV7QGZllFyrfQcs6cFQd7hJpS9hz">
                         <button class="flex justify-center flex-col items-center gap-1"> 
                         <ion-icon name="apps" class="text-2xl"></ion-icon>
-                        <span class="text-base text-grey font-semibold"> Resources </span> 
+                        <span class="text-sm text-grey font-semibold"> Resources </span> 
                         </button>
+                        </a>
                     </li>
 
                     <li>
+                        <a href="https://promo.edspert.id/bootcamp-web-developer/?utm_source=instagram">
                         <button class="flex justify-center flex-col items-center gap-1">
                         <ion-icon name="card" class="text-2xl"></ion-icon>
-                        <span class="text-base text-grey font-semibold"> Pricing </span> 
+                        <span class="text-sm text-grey font-semibold"> Pricing </span> 
                         </button>
+                        </a>
                     </li>
                 </ul>
                 <div x-show="open" class="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2"
@@ -97,7 +125,7 @@
                 <div class="pb-1 lg:pb-6 sm:pb-3"> 
                     <button class=" rounded-xl text-[#6941C6] bg-[#f4efff] w-24 lg:w-40 sm:w-28 h-7 font-medium text-[8px] lg:text-sm sm:text-[10px] text-center cursor-default" > Intensive Botcamp </button>
                 </div>
-                <div class="text-center text-[#42307D] font-semibold">
+                <div class="text-center text-[#42307D] font-semibold hover:scale-105 transition-transform duration-1000 ease-in-out">
                 <p class="text-3xl lg:text-5xl sm:text-4xl">Upskill Your Talent!</p> 
                 </div>
                 <div class="pt-2 lg:pt-10 sm:pt-5 font-normal text-[#6941C6]"> 
@@ -114,9 +142,9 @@
 
     <!-- Cards Price -->
    
-    <section class="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 px-20 gap-8 py-12">
+    <section class="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 px-20 gap-8 py-12 bg-">
     <!-- Price 1 -->
-    <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto ">
+    <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out">
         <img class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
         <div class="px-6 py-4">
           <div class="font-semibold text-xl text-[#101828] mb-2">Web Development Bootcamp</div>
@@ -154,7 +182,7 @@
           </div>
       </div>
     <!-- Price 2 -->
-      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto ">
+      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out">
         <img class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
         <div class="px-6 py-4">
           <div class="font-semibold text-xl text-[#101828] mb-2">Web Development Bootcamp</div>
@@ -192,7 +220,7 @@
           </div>
       </div>
     <!-- Price 3 -->
-      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto ">
+      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out">
         <img class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
         <div class="px-6 py-4">
           <div class="font-semibold text-xl text-[#101828] mb-2">Web Development Bootcamp</div>
@@ -230,7 +258,7 @@
           </div>
       </div>
     <!-- Price 4 -->
-      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto ">
+      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out ">
         <img class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
         <div class="px-6 py-4">
           <div class="font-semibold text-xl text-[#101828] mb-2">Web Development Bootcamp</div>
@@ -268,7 +296,7 @@
           </div>
       </div>
     <!-- Price 5 -->
-      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto ">
+      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out">
         <img class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
         <div class="px-6 py-4">
           <div class="font-semibold text-xl text-[#101828] mb-2">Web Development Bootcamp</div>
@@ -306,7 +334,7 @@
           </div>
       </div>
     <!-- Price 6 -->
-      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto ">
+      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out">
         <img class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
         <div class="px-6 py-4">
           <div class="font-semibold text-xl text-[#101828] mb-2">Web Development Bootcamp</div>
