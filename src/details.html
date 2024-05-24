@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Alpine js -->
+    <script src="//unpkg.com/alpinejs"></script>
+    <!-- Icon -->
+    <link rel="icon" href="./assets/logo edspert 1.svg">
+
+    <title>Edspert</title>
+</head>
+
+    <body class="m-0 p-0">
+    
+        <nav class="px-2 py-8 bg-white" x-data="{open : false}">
+            <div class="container mx-auto "> 
+                <div class="flex justify-between items-center ml-0 ">
+                    <img @click="open = !open" src="./assets/hamburger.png" style="height:28px; cursor:pointer;" class=" sm:hidden order-2 sm:order-1">
+                    <!-- logo -->
+                    <div class="flex items-center gap-10 ">
+                    <a href="#">
+                    <img src="./assets/logo edspert 1.svg" class="order-1 sm:order-2 cursor-pointer">
+                    </a>
+                
+                <!-- menu -->
+                <div class=" order-2 hidden lg:block">
+                    <ul class="flex gap-9 ">
+                       <li class="text-grey font-semibold text-base hover:text-black duration-500">
+                        <a href="index.html">Home</a>
+                        </li>
+                       
+                        <li class="relative group">
+                            <p class="flex items-center text-grey font-semibold text-base group-hover:text-black duration-500 cursor-pointer" id="dropdown-trig-products">
+                                Products
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </p>
+                            <!-- Isi Dropdown -->
+                            <ul class="absolute hidden bg-white rounded-lg shadow-md py-1 mt-2 w-48" id="dropdown-products"> 
+                                <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="index.html#WebDev">Web Dev Bootcamp</a></li>
+                                <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="index.html#Excel">Excel Bootcamp</a></li>
+                                <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="index.html#Marketing">Digital Marketing Bootcamp</a></li>
+                                <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="index.html#Office">Microsoft Office Bootcamp</a></li>
+                                <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="index.html#iot">IoT Bootcamp</a></li>
+                                <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="index.html#DigitalContent">Digital Content Bootcamp</a></li>
+                            </ul>
+                        </li>
+    
+                        <li class="relative group">
+                            <p class="flex items-center text-grey font-semibold text-base group-hover:text-black duration-500 cursor-pointer" id="dropdown-trig-resources">
+                                Resources
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </p>
+                            <!-- Isi Dropdown -->
+                            <ul class="absolute hidden bg-white rounded-lg shadow-md py-1 mt-2 w-48" id="dropdown-resources">
+                                <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="details.html">Resource</a></li>
+                                <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="#mentor">Mentor</a></li>
+                                <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="#fasilitas">Fasilitas</a></li>
+                                <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="#materi">Materi</a></li>
+                            </ul>
+                        </li>
+    
+                       <li class="text-grey font-semibold text-base hover:text-black duration-500">
+                        <a href="index.html#price">Pricing</a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+                <!-- profile -->
+                <div class="order-3 hidden sm:block">
+                    <button class=" px-2.5 py-2.5 rounded-lg text-grey font-semibold text-base hover:bg-[#7F56D9] hover:text-white duration-700"> Login </button>
+                    <button class="bg-[#7F56D9] px-2.5 py-2.5 rounded-lg text-white font-semibold text-base hover:bg-white hover:text-[#7F56D9] duration-700"> Sign up </button>
+                </div>
+                </div>
+                <!-- Mobile Navigation -->
+                <div  class="fixed mx-0 bottom-0 right-0 left-0 bg-white p-1 border lg:hidden z-50">
+                    <ul class="flex justify-evenly">
+                        <li>
+                            <a href="index.html">
+                            <button class="flex justify-center flex-col items-center gap-1"> 
+                            <ion-icon name="home" class="text-2xl"></ion-icon>
+                            <span class="text-xs font-semibold text-grey"> Home </span> 
+                            </button>
+                            </a>
+                        </li>
+    
+                        <li>
+                            <a href="index.html">
+                            <button class="flex justify-center flex-col items-center gap-1"> 
+                            <ion-icon name="basket" class="text-2xl"></ion-icon>
+                            <span class="text-xs text-grey font-semibold"> Products </span> 
+                            </button>
+                            </a>
+                        </li>
+    
+                        <li>
+                            <a href="details.html">
+                            <button class="flex justify-center flex-col items-center gap-1"> 
+                            <ion-icon name="apps" class="text-2xl"></ion-icon>
+                            <span class="text-xs text-grey font-semibold"> Resources </span> 
+                            </button>
+                            </a>
+                        </li>
+    
+                        <li>
+                            <a href="index.html#price">
+                            <button class="flex justify-center flex-col items-center gap-1">
+                            <ion-icon name="card" class="text-2xl"></ion-icon>
+                            <span class="text-xs text-grey font-semibold"> Pricing </span> 
+                            </button>
+                            </a>
+                        </li>
+                    </ul>
+                    <div x-show="open" class="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2"
+                    x-show="open"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 scale-90"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-90">
+                        <button class="bg-white px-2.5 py-2.5 text-grey font-semibold text-base"> Login </button>
+                        <button class="bg-[#7F56D9] px-2.5 py-2.5 border rounded-lg text-white font-semibold text-base"> Sign up </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    <!-- Hero -->
+    <section class="bg-brokenwhite">
+        <div class="container mx-auto hover:scale-105 transition-transform duration-700 ease-in-out">
+            <div class="flex justify-center items-center">
+            <div class="grid grid-cols-12 px-2 py-5 ">
+                <div class="col-span-12 lg:col-span-6 "> <img src="./assets/detailsBanner.svg" alt="" class="lg:size-[560px] sm:size-[476px] size-[376px]">
+                </div>
+                <div class="col-span-12 lg:col-span-4 pt-6"> 
+                    <p class="text-base font-semibold pb-5 text-[#7F56D9]"> Intensive Bootcamp</p>
+                    <h1 class="lg:text-5xl sm:text-4xl text-3xl font-semibold pb-5 text-[#101828]"> Web Development </h1>
+                    <h1 class="lg:text-5xl sm:text-4xl text-3xl font-semibold tex-[#101828] pb-16"> Bootcamp</h1>
+                    <h1 class="flex justify-between pb-5"><span class="lg:text-6xl sm:text-5xl text-4xl font-semibold text-[#7F56D9]">400+</span>  <span class="lg:text-6xl sm:text-5xl text-4xl font-semibold text-[#7F56D9]">80%</span></h1>
+                    <h1 class="flex justify-between pb-16 ">
+                        <span class="lg:text-lg sm:text-base text-sm font-medium text-[#101828] ">Portofolio Siswa</span>  <span class="lg:text-lg sm:text-base text-sm font-medium text-[#101828]">Alumni diterima kerja</span>
+                    </h1>
+                    <h1 class="flex justify-between pb-5"><span class="lg:text-6xl sm:text-5xl text-4xl font-semibold text-[#7F56D9]">10k</span>  <span class="lg:text-6xl sm:text-5xl text-4xl font-semibold text-[#7F56D9]">2000+</span></h1>
+                    <h1 class="flex justify-between pb-16 ">
+                        <span class="lg:text-lg sm:text-base text-sm font-medium text-[#101828] ">Anggota Komunitas</span>  <span class="lg:text-lg sm:text-base text-sm font-medium text-[#101828]">Testimoni</span>
+                    </h1>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentor-->
+    <section id="mentor">
+    <div class="container mx-auto py-16">
+        <div class="text-center">
+            <h1 class="text-4xl font-semibold text-[#101828] pb-5">Mentor</h1>
+        </div>
+        <p class="text-center text-xl font-normal text-[#667085] pb-16">Dipandu oleh Mentor Terbaik Kami</p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-6 lg:grid-cols-12 gap-10  text-center h-auto">
+
+            <!-- Mentor 1 -->
+            <div class="max-w-sm w-[280px] h-[316px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] flex flex-col justify-center items-center col-span-3">
+                <img class="w-[80px] h-[80px] flex items-center" src="./assets/agnesamanta.svg" alt="">
+                <div class="px-6 py-4">
+                    <div class="font-semibold text-xl text-[#101828] mb-2">Agnes Amanta</div>
+                    <p class="text-[#6941C6] text-base font-normal">Founder & CEO</p>
+                </div>
+                <div>
+                    <p class="text-[#667085] text-base font-normal">Former co-founder of Opendoor. Early staff at Spotify and Clearbit.</p>
+                </div>
+                <div>
+                    <div class="px-6 pt-4  flex justify-center gap-3">
+                        <img src="./assets/twittericon.svg" alt="">
+                        <img src="./assets/lkdnicon.svg" alt="">
+                        <img src="./assets/bolaicon.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- Mentor 2 -->
+            <div class="max-w-sm w-[280px] h-[316px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] flex flex-col justify-center items-center col-span-3">
+                <img class="w-[80px] h-[80px] flex items-center" src="./assets/kajen.svg" alt="">
+                <div class="px-6 py-4">
+                    <div class="font-semibold text-xl text-[#101828] mb-2">Kajen Permadi </div>
+                    <p class="text-[#6941C6] text-base font-normal">Engineering Manager</p>
+                </div>
+                <div>
+                    <p class="text-[#667085] text-base font-normal">Lead engineering teams at Figma, Pitch, and Protocol Labs.</p>
+                </div>
+                <div>
+                    <div class="px-6 pt-4  flex justify-center gap-3">
+                        <img src="./assets/twittericon.svg" alt="">
+                        <img src="./assets/lkdnicon.svg" alt="">
+                        <img src="./assets/bolaicon.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- Mentor 3 -->
+            <div class="max-w-sm w-[280px] h-[316px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] flex flex-col justify-center items-center col-span-3">
+                <img class="w-[80px] h-[80px] flex items-center" src="./assets/natsir.svg" alt="">
+                <div class="px-6 py-4">
+                    <div class="font-semibold text-xl text-[#101828] mb-2">Natsir Naradi</div>
+                    <p class="text-[#6941C6] text-base font-normal">Product Manager</p>
+                </div>
+                <div>
+                    <p class="text-[#667085] text-base font-normal">Former PM for Linear, Lambda School, and On Deck.</p>
+                </div>
+                <div>
+                    <div class="px-6 pt-4  flex justify-center gap-3">
+                        <img src="./assets/twittericon.svg" alt="">
+                        <img src="./assets/lkdnicon.svg" alt="">
+                        <img src="./assets/bolaicon.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- Mentor 4 -->
+            <div class="max-w-sm w-[280px] h-[316px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] flex flex-col justify-center items-center col-span-3">
+                <img class="w-[80px] h-[80px] flex items-center" src="./assets/rahimah.svg" alt="">
+                <div class="px-6 py-4">
+                    <div class="font-semibold text-xl text-[#101828] mb-2">Rahimah Gilda</div>
+                    <p class="text-[#6941C6] text-base font-normal">Frontend Developer</p>
+                </div>
+                <div>
+                    <p class="text-[#667085] text-base font-normal">Former frontend dev for Linear, Coinbase, and Postscript.</p>
+                </div>
+                <div>
+                    <div class="px-6 pt-4  flex justify-center gap-3">
+                        <img src="./assets/twittericon.svg" alt="">
+                        <img src="./assets/lkdnicon.svg" alt="">
+                        <img src="./assets/bolaicon.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- Mentor 5 -->
+            <div class="max-w-sm w-[280px] h-[316px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] flex flex-col justify-center items-center col-span-3">
+                <img class="w-[80px] h-[80px] flex items-center" src="./assets/suartini.svg" alt="">
+                <div class="px-6 py-4">
+                    <div class="font-semibold text-xl text-[#101828] mb-2">Suartini Novi</div>
+                    <p class="text-[#6941C6] text-base font-normal">Backend Developer</p>
+                </div>
+                <div>
+                    <p class="text-[#667085] text-base font-normal">Lead backend dev at Clearbit. Former Clearbit and Loom.</p>
+                </div>
+                <div>
+                    <div class="px-6 pt-4  flex justify-center gap-3">
+                        <img src="./assets/twittericon.svg" alt="">
+                        <img src="./assets/lkdnicon.svg" alt="">
+                        <img src="./assets/bolaicon.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- Mentor 6 -->
+            <div class="max-w-sm w-[280px] h-[316px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] flex flex-col justify-center items-center col-span-3">
+                <img class="w-[80px] h-[80px] flex items-center" src="./assets/hannah.svg" alt="">
+                <div class="px-6 py-4">
+                    <div class="font-semibold text-xl text-[#101828] mb-2">Hannah Airlangga</div>
+                    <p class="text-[#6941C6] text-base font-normal">Product Designer</p>
+                </div>
+                <div>
+                    <p class="text-[#667085] text-base font-normal">Founding design team at Figma. Former Pleo, Stripe, and Tile.</p>
+                </div>
+                <div>
+                    <div class="px-6 pt-4  flex justify-center gap-3">
+                        <img src="./assets/twittericon.svg" alt="">
+                        <img src="./assets/lkdnicon.svg" alt="">
+                        <img src="./assets/bolaicon.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- Mentor 7 -->
+            <div class="max-w-sm w-[280px] h-[316px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] flex flex-col justify-center items-center col-span-3">
+                <img class="w-[80px] h-[80px] flex items-center" src="./assets/firman.svg" alt="">
+                <div class="px-6 py-4">
+                    <div class="font-semibold text-xl text-[#101828] mb-2">Firman Kurniawan</div>
+                    <p class="text-[#6941C6] text-base font-normal">UX Researcher</p>
+                </div>
+                <div>
+                    <p class="text-[#667085] text-base font-normal">Lead user research for Slack. Contractor for Netflix and Udacity.</p>
+                </div>
+                <div>
+                    <div class="px-6 pt-4  flex justify-center gap-3">
+                        <img src="./assets/twittericon.svg" alt="">
+                        <img src="./assets/lkdnicon.svg" alt="">
+                        <img src="./assets/bolaicon.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- Mentor 8 -->
+            <div class="max-w-sm w-[280px] h-[316px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] flex flex-col justify-center items-center col-span-3">
+                <img class="w-[80px] h-[80px] flex items-center" src="./assets/mario.svg" alt="">
+                <div class="px-6 py-4">
+                    <div class="font-semibold text-xl text-[#101828] mb-2">Mario Agustinus</div>
+                    <p class="text-[#6941C6] text-base font-normal">Customer Success</p>
+                </div>
+                <div>
+                    <p class="text-[#667085] text-base font-normal">Lead CX at Wealthsimple. Former PagerDuty and Sqreen.</p>
+                </div>
+                <div>
+                    <div class="px-6 pt-4  flex justify-center gap-3">
+                        <img src="./assets/twittericon.svg" alt="">
+                        <img src="./assets/lkdnicon.svg" alt="">
+                        <img src="./assets/bolaicon.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Fasilitas -->
+    <section id="fasilitas" class="bg-[#F9FAFB]">
+        <div class="container mx-auto py-16">
+            <div class="text-center">
+                <h1 class="text-4xl font-semibold text-[#101828] pb-5">Fasilitas</h1>
+            </div>
+            <p class="text-center text-xl font-normal text-[#667085] pb-16 ">Pengalaman Terbaik Bootcamp untuk Kamu!</p>
+            <div class="flex justify-center items-center">
+            <div class="grid lg:grid-cols-12 gap-4 text-center ">
+                <!-- Kolom 1 -->
+                <div class="col-span-4 w-[384px] h-[154px] flex flex-col items-center mb-16">
+                    <!-- Konten Kolom 1 -->
+                    <img src="./assets/komunitasicon.svg" alt="" class="w-12 h-12">
+                    <h1 class="text-xl font-medium text-[#101828] pt-5 pb-3">Komunitas</h1>
+                    <p class="text-base text-[#667085] font-normal ">Kenali banyak anggota dari komunitas alumni Edspert dari berbagai macam bidang studi.</p>
+                </div>
+                <!-- Kolom 2 -->
+                <div class="col-span-4 w-[384px] h-[154px] flex flex-col items-center mb-16">
+                    <!-- Konten Kolom 2 -->
+                    <img src="./assets/1-1icon.svg" alt="" class="flex items-center w-12 h-12">
+                    <h1 class="text-xl font-medium text-[#101828] pt-5 pb-3">1-on-1 Session</h1>
+                    <p class="text-base text-[#667085] font-normal">Kenali banyak anggota dari komunitas alumni Edspert dari berbagai macam bidang studi.</p>
+                </div>
+                <!-- Kolom 3 -->
+                <div class="col-span-4 w-[384px] h-[154px] flex flex-col items-center mb-16">
+                    <!-- Konten Kolom 3 -->
+                    <img src="./assets/learningicon.svg" alt="" class="flex items-center w-12 h-12">
+                    <h1 class="text-xl font-medium text-[#101828] pt-5 pb-3">Active Learning</h1>
+                    <p class="text-base text-[#667085] font-normal">Kenali banyak anggota dari komunitas alumni Edspert dari berbagai macam bidang studi.</p>
+                </div>
+                <!-- Kolom 4 -->
+                <div class="col-span-4 w-[384px] h-[154px] flex flex-col items-center mb-16">
+                    <!-- Konten Kolom 4 -->
+                    <img src="./assets/happyicon.svg" alt="" class="flex items-center w-12 h-12">
+                    <h1 class="text-xl font-medium text-[#101828] pt-5 pb-3">Happy Atmosphere</h1>
+                    <p class="text-base text-[#667085] font-normal">Kenali banyak anggota dari komunitas alumni Edspert dari berbagai macam bidang studi.</p>
+                </div>
+                <!-- Kolom 5 -->
+                <div class="col-span-4 w-[384px] h-[154px] flex flex-col items-center mb-16">
+                    <!-- Konten Kolom 5 -->
+                    <img src="./assets/tugasicon.svg" alt="" class="flex items-center w-12 h-12">
+                    <h1 class="text-xl font-medium text-[#101828] pt-5 pb-3">Tugas</h1>
+                    <p class="text-base text-[#667085] font-normal">Kenali banyak anggota dari komunitas alumni Edspert dari berbagai macam bidang studi.</p>
+                </div>
+                <!-- Kolom 6 -->
+                <div class="col-span-4 w-[384px] h-[154px] flex flex-col items-center mb-16">
+                    <!-- Konten Kolom 6 -->
+                    <img src="./assets/intensiveicon.svg" alt="" class="flex items-center w-12 h-12">
+                    <h1 class="text-xl font-medium text-[#101828] pt-5 pb-3">Intensive Bootcamp</h1>
+                    <p class="text-base text-[#667085] font-normal">Kenali banyak anggota dari komunitas alumni Edspert dari berbagai macam bidang studi.</p>
+                </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Materi -->
+    <section id="materi">
+        <div class="container mx-auto py-16">
+            <div class=" flex justify-center items-center">
+                <h1 class="text-xl font-semibold"> Materi</h1>
+            </div>
+
+            <div class="py-6">
+            <div class=" w-[312px] h-auto lg:w-[768px] lg:h-[112px] sm:w-[500px] sm:h-[112px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] justify-center items-center">
+                <div class="px-6 py-4">
+                    <div class="font-semibold text-xl text-[#101828] mb-2">Introduction to Web Development</div>
+                    <p class="text-grey text-base font-normal">Belajar logika dan hal hal dasar untuk menyipkan kamu belajar pengembangan web</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="pb-6">
+            <div class=" w-[312px] h-auto lg:w-[768px] lg:h-[112px] sm:w-[500px] sm:h-[112px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] justify-center items-center">
+                <div class="px-6 py-4">
+                    <div class="font-semibold text-xl text-[#101828] mb-2">Introduction to Web Development</div>
+                    <p class="text-grey text-base font-normal">Belajar logika dan hal hal dasar untuk menyipkan kamu belajar pengembangan web</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="pb-6">
+            <div class=" w-[312px] h-auto lg:w-[768px] lg:h-[112px] sm:w-[500px] sm:h-[112px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] justify-center items-center">
+                <div class="px-6 py-4">
+                    <div class="font-semibold text-xl text-[#101828] mb-2">Introduction to Web Development</div>
+                    <p class="text-grey text-base font-normal">Belajar logika dan hal hal dasar untuk menyipkan kamu belajar pengembangan web</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="pb-6">
+            <div class=" w-[312px] h-auto lg:w-[768px] lg:h-[112px] sm:w-[500px] sm:h-[112px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] justify-center items-center">
+                    <div class="px-6 py-4">
+                        <div class="font-semibold text-xl text-[#101828] mb-2">Introduction to Web Development</div>
+                        <p class="text-grey text-base font-normal">Belajar logika dan hal hal dasar untuk menyipkan kamu belajar pengembangan web</p>
+                    </div>
+            </div>
+            </div>
+
+            <div class="pb-6">
+            <div class=" w-[312px] h-auto lg:w-[768px] lg:h-[112px] sm:w-[500px] sm:h-[112px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] justify-center items-center">
+                        <div class="px-6 py-4">
+                            <div class="font-semibold text-xl text-[#101828] mb-2">Introduction to Web Development</div>
+                            <p class="text-grey text-base font-normal">Belajar logika dan hal hal dasar untuk menyipkan kamu belajar pengembangan web</p>
+                        </div>
+            </div>
+            </div>
+
+            <div class="pb-6">
+            <div class=" w-[312px] h-auto lg:w-[768px] lg:h-[112px] sm:w-[500px] sm:h-[112px] rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-[#F9FAFB] justify-center items-center">
+                            <div class="px-6 py-4">
+                                <div class="font-semibold text-xl text-[#101828] mb-2">Introduction to Web Development</div>
+                                <p class="text-grey text-base font-normal">Belajar logika dan hal hal dasar untuk menyipkan kamu belajar pengembangan web</p>
+                            </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regis Kelas -->
+    <section>
+    <div class="container mx-auto mb-16">
+        <div class="flex flex-col sm:flex-row justify-between items-center pb-2">
+            <h1 class="text-3xl font-semibold text-[#101828]"> Daftar Kelas Sekarang </h1>
+        <div class="flex flex-col sm:flex-row gap-4">
+            <button class=" px-2.5 py-2.5 w-[132px] h-[48px] border rounded-lg text-grey font-semibold text-base hover:bg-[#7F56D9] hover:text-white duration-700"> Hubungi CS </button>
+            <button class="bg-[#7F56D9] px-2.5 py-2.5 w-[166px] h-[48px] rounded-lg text-white font-semibold text-base hover:bg-white hover:text-[#7F56D9] duration-700"> Daftar Sekarang </button>
+        </div>   
+        </div>
+        <p class="text-xl font-normal text-[#667085] hidden sm:block"> Join over 10,000+ students already growing with Edspert </p> 
+    </div>
+    </section>
+
+    <!-- footer 1 -->
+    <footer class=" text-[#667085] text-base font-semibold py-8 mx-auto ">
+        <div class="container mx-auto">
+            <div class="flex justify-center items-center">
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-12 gap-4 ">
+            <!-- Kolom 1 -->
+            <div class="col-span-3 ">
+                <!-- Konten Kolom 1 -->
+                <img src="./assets/logo edspert 1.svg" alt="" class="pb-4">
+                <p class="text-base font-normal pb-4"> Design amazing digital experiences that create more happy in the world.</p>
+            </div>
+
+            <div class="col-span-3">
+               
+            </div>
+            <!-- Kolom 2 -->
+            <div class="col-span-1 ">
+                <!-- Konten Kolom 2 -->
+                <p class="pb-4 text-sm text-[#98A2B3]">Product</p>
+                <p class="pb-4">Overview</p>
+                <p class="pb-4">Features</p>
+                <p class="pb-4">Solutions</p>
+                <p class="pb-4">Tutorials</p>
+                <p class="pb-4">Pricing</p>
+                <p class="pb-4">Releases</p>
+            </div>
+            <!-- Kolom 3 -->
+            <div class="col-span-1" >
+                <!-- Konten Kolom 3 -->
+                <p class="pb-4 text-sm text-[#98A2B3]">Company</p>
+                <p class="pb-4">About us</p>
+                <p class="pb-4">Careers</p>
+                <p class="pb-4">Press</p>
+                <p class="pb-4">News</p>
+                <p class="pb-4">Media kit</p>
+                <p class="pb-4">Contact</p>
+            </div>
+            <!-- Kolom 4 -->
+            <div class="col-span-1" >
+                <!-- Konten Kolom 4 -->
+                <p class="pb-4 text-sm text-[#98A2B3]">Resources</p>
+                <p class="pb-4">Blog</p>
+                <p class="pb-4">Newsletter</p>
+                <p class="pb-4">Events</p>
+                <p class="pb-4">Help center</p>
+                <p class="pb-4">Tutorials</p>
+                <p class="pb-4">Support</p>
+            </div>
+            <!-- Kolom 5 -->
+            <div class="col-span-1" >
+                <!-- Konten Kolom 5 -->
+                <p class="pb-4 text-sm text-[#98A2B3]">Social</p>
+                <p class="pb-4">Twitter</p>
+                <p class="pb-4">LinkedIn</p>
+                <p class="pb-4">Facebook</p>
+                <p class="pb-4">GitHub</p>
+                <p class="pb-4">AngelList</p>
+                <p class="pb-4">Dribbble</p>
+            </div>
+            <!-- Kolom 6 -->
+            <div class="col-span-1" >
+                <!-- Konten Kolom 6 -->
+                <p class="pb-4 text-sm text-[#98A2B3]">Legal</p>
+                <p class="pb-4">Terms</p>
+                <p class="pb-4">Privacy</p>
+                <p class="pb-4">Cookies</p>
+                <p class="pb-4">Licences</p>
+                <p class="pb-4">Settings</p>
+                <p class="pb-4">Contact</p>
+            </div>
+        </div>
+        </div>
+        </div>
+    </footer>
+    
+    <!-- footer 2 -->
+    <footer>
+        <div class="text-[#667085] text-base font-semibold py-8 mx-auto mb-12">
+            <div class="container mx-auto">
+                <div class="flex flex-col sm:flex-row items-center justify-between">
+                    <!-- Bagian teks -->
+                    <p class="text-base font-normal text-[#98A2B3]">&copy; 2077 Untitled UI. All rights reserved.</p>
+                    
+                    <!-- Bagian ikon -->
+                    <div class="flex space-x-4">
+                        <a href="#">
+                            <img src="./assets/twittericon.svg" class="cursor-pointer">
+                        </a>
+                        <a href="#">
+                            <img src="./assets/lkdnicon.svg" class="cursor-pointer">
+                        </a>
+                        <a href="#">
+                            <img src="./assets/facebookicon.svg" class="cursor-pointer">
+                        </a>
+                        <a href="#">
+                            <img src="./assets/giticon.svg" class="cursor-pointer">
+                        </a>
+                        <a href="#">
+                            <img src="./assets/peaceicon.svg" class="cursor-pointer">
+                        </a>
+                        <a href="#">
+                            <img src="./assets/bolaicon.svg" class="cursor-pointer">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script src="details.js"></script>
+       
+</body>
+</html>

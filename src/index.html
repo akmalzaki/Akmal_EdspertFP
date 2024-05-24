@@ -18,43 +18,57 @@
     
     <nav class="px-2 py-8" x-data="{open : false}">
         <div class="container mx-auto "> 
-            <div class="flex justify-between items-center ">
+            <div class="flex justify-between items-center ml-0 ">
                 <img @click="open = !open" src="./assets/hamburger.png" style="height:28px; cursor:pointer;" class=" sm:hidden order-2 sm:order-1">
                 <!-- logo -->
-                <div class="flex items-center gap-10">
+                <div class="flex items-center gap-10 ">
                 <a href="#">
-            <img src="./assets/logo edspert 1.svg" class="order-1 sm:order-2 cursor-pointer">
+                <img src="./assets/logo edspert 1.svg" class="order-1 sm:order-2 cursor-pointer">
                 </a>
             
             <!-- menu -->
             <div class=" order-2 hidden lg:block">
                 <ul class="flex gap-9 ">
                    <li class="text-grey font-semibold text-base hover:text-black duration-500">
-                    <a href="#">Home</a>
+                    <a href="index.html">Home</a>
                     </li>
                    
                     <li class="relative group">
-                        <!-- Dropdown Trigger with arrow icon -->
-                        <a class="flex items-center text-grey font-semibold text-base group-hover:text-black duration-500" href="#">
+                        <p class="flex items-center text-grey font-semibold text-base group-hover:text-black duration-500 cursor-pointer" id="dropdown-trig-products">
                             Products
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
-                        </a>
+                        </p>
+                        <!-- Isi Dropdown -->
+                        <ul class="absolute hidden bg-white rounded-lg shadow-md py-1 mt-2 w-48" id="dropdown-products">
+                            <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="#WebDev">Web Dev Bootcamp</a></li>
+                            <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="#Excel">Excel Bootcamp</a></li>
+                            <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="#Marketing">Digital Marketing Bootcamp</a></li>
+                            <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="#Office">Microsoft Office Bootcamp</a></li>
+                            <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="#iot">IoT Bootcamp</a></li>
+                            <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="#DigitalContent">Digital Content Bootcamp</a></li>
+                        </ul>
                     </li>
 
                     <li class="relative group">
-                        <!-- Dropdown Trigger with arrow icon -->
-                        <a class="flex items-center text-grey font-semibold text-base group-hover:text-black duration-500" href="#">
+                        <p class="flex items-center text-grey font-semibold text-base group-hover:text-black duration-500 cursor-pointer" id="dropdown-trig-resources">
                             Resources
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
-                        </a>
+                        </p>
+                        <!-- Isi Dropdown -->
+                        <ul class="absolute hidden bg-white rounded-lg shadow-md py-1 mt-2 w-48" id="dropdown-resources">
+                            <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="details.html">Resource</a></li>
+                            <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="details.html#mentor">Mentor</a></li>
+                            <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="details.html#fasilitas">Fasilitas</a></li>
+                            <li><a class="block px-4 py-2 text-grey font-semibold hover:text-black duration-500" href="details.html#materi">Materi</a></li>
+                        </ul>
                     </li>
 
                    <li class="text-grey font-semibold text-base hover:text-black duration-500">
-                    <a href="#">Pricing</a>
+                    <a href="#price">Pricing</a>
                     </li>
                 </ul>
             </div>
@@ -66,40 +80,40 @@
             </div>
             </div>
             <!-- Mobile Navigation -->
-            <div  class="fixed mx-0 bottom-0 right-0 left-0 bg-white p-4 border lg:hidden z-50">
-                <ul class="flex justify-between">
+            <div  class="fixed mx-0 bottom-0 right-0 left-0 bg-white p-1 border lg:hidden z-50">
+                <ul class="flex justify-evenly">
                     <li>
-                        <a href="#">
+                        <a href="index.html">
                         <button class="flex justify-center flex-col items-center gap-1"> 
                         <ion-icon name="home" class="text-2xl"></ion-icon>
-                        <span class="text-sm font-semibold text-grey"> Home </span> 
+                        <span class="text-xs font-semibold text-grey"> Home </span> 
                         </button>
                         </a>
                     </li>
 
                     <li>
-                        <a href="https://edspert.id/bootcamp">
+                        <a href="index.html">
                         <button class="flex justify-center flex-col items-center gap-1"> 
                         <ion-icon name="basket" class="text-2xl"></ion-icon>
-                        <span class="text-sm text-grey font-semibold"> Products </span> 
+                        <span class="text-xs text-grey font-semibold"> Products </span> 
                         </button>
                         </a>
                     </li>
 
                     <li>
-                        <a href="https://linkin.bio/edspert.id?fbclid=PAZXh0bgNhZW0CMTEAAaa5fE113LP2wgm3c4OdVZcOsb5qHDg4Stkxs8o69Zr8mPLn87G0jBq9Beg_aem_AcqlKrpT9QPv6dActIceO9ko7k4Wbf-BYYw7vufYeXb0MCUkTKqVg5IM-OREcV7QGZllFyrfQcs6cFQd7hJpS9hz">
+                        <a href="details.html">
                         <button class="flex justify-center flex-col items-center gap-1"> 
                         <ion-icon name="apps" class="text-2xl"></ion-icon>
-                        <span class="text-sm text-grey font-semibold"> Resources </span> 
+                        <span class="text-xs text-grey font-semibold"> Resources </span> 
                         </button>
                         </a>
                     </li>
 
                     <li>
-                        <a href="https://promo.edspert.id/bootcamp-web-developer/?utm_source=instagram">
+                        <a href="#price">
                         <button class="flex justify-center flex-col items-center gap-1">
                         <ion-icon name="card" class="text-2xl"></ion-icon>
-                        <span class="text-sm text-grey font-semibold"> Pricing </span> 
+                        <span class="text-xs text-grey font-semibold"> Pricing </span> 
                         </button>
                         </a>
                     </li>
@@ -141,12 +155,12 @@
     </section>
 
     <!-- Cards Price -->
-   
-    <section class="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 px-20 gap-8 py-12 bg-">
+    <section id="price" class="py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 px-20 gap-8 " >
     <!-- Price 1 -->
-    <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out">
-        <img class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
-        <div class="px-6 py-4">
+    <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-white">
+        <img id="WebDev" class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
+        <div  class="px-6 py-4">
           <div class="font-semibold text-xl text-[#101828] mb-2">Web Development Bootcamp</div>
           <p class="text-grey text-base font-normal">
             Batch 12
@@ -179,13 +193,16 @@
                     Rp 899.000
                 </p>
             </span>
+          </div>
+          <div class="flex justify-center mb-6">
+            <button class=" bg-[#7F56D9] w-44 h-10 lg:w-80 lg:h-12 sm:w-56 sm:h-10 rounded-lg text-white font-semibold text-sm lg:text-base sm:text-sm hover:bg-white hover:text-[#7F56D9] duration-700"> Daftar Sekarang </button>
           </div>
       </div>
     <!-- Price 2 -->
-      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out">
-        <img class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
+      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-white">
+        <img id="Excel" class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
         <div class="px-6 py-4">
-          <div class="font-semibold text-xl text-[#101828] mb-2">Web Development Bootcamp</div>
+          <div class="font-semibold text-xl text-[#101828] mb-2">Microsoft Excel Bootcamp</div>
           <p class="text-grey text-base font-normal">
             Batch 12
           </p>
@@ -210,20 +227,23 @@
         </div>
         <div class="px-6 py-4 flex justify-between">
             <p class="text-grey font-normal text-base">
-             <s> Rp. 1.499.000 </s>
+             <s> Rp. 1.199.000 </s>
             </p>
             <span>
                 <p class="font-bold text-xl text-[#101828]">
-                    Rp 899.000
+                    Rp 699.000
                 </p>
             </span>
+          </div>
+          <div class="flex justify-center mb-6">
+            <button class=" bg-[#7F56D9] w-44 h-10 lg:w-80 lg:h-12 sm:w-56 sm:h-10 rounded-lg text-white font-semibold text-sm lg:text-base sm:text-sm hover:bg-white hover:text-[#7F56D9] duration-700"> Daftar Sekarang </button>
           </div>
       </div>
     <!-- Price 3 -->
-      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out">
-        <img class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
+      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-ou bg-white">
+        <img id="Marketing" class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
         <div class="px-6 py-4">
-          <div class="font-semibold text-xl text-[#101828] mb-2">Web Development Bootcamp</div>
+          <div  class="font-semibold text-xl text-[#101828] mb-2">Digital Marketing Bootcamp</div>
           <p class="text-grey text-base font-normal">
             Batch 12
           </p>
@@ -248,20 +268,25 @@
         </div>
         <div class="px-6 py-4 flex justify-between">
             <p class="text-grey font-normal text-base">
-             <s> Rp. 1.499.000 </s>
+             <s> Rp. 899.000 </s>
             </p>
             <span>
                 <p class="font-bold text-xl text-[#101828]">
-                    Rp 899.000
+                    Rp 769.000
                 </p>
             </span>
           </div>
+          <div class="flex justify-center mb-6">
+            <button class=" bg-[#7F56D9] w-44 h-10 lg:w-80 lg:h-12 sm:w-56 sm:h-10 rounded-lg text-white font-semibold text-sm lg:text-base sm:text-sm hover:bg-white hover:text-[#7F56D9] duration-700"> Daftar Sekarang </button>
+          </div>
       </div>
+    
+      
     <!-- Price 4 -->
-      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out ">
-        <img class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
+      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-white">
+        <img id="Office" class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
         <div class="px-6 py-4">
-          <div class="font-semibold text-xl text-[#101828] mb-2">Web Development Bootcamp</div>
+          <div class="font-semibold text-xl text-[#101828] mb-2">Microsoft Office Bootcamp</div>
           <p class="text-grey text-base font-normal">
             Batch 12
           </p>
@@ -286,20 +311,23 @@
         </div>
         <div class="px-6 py-4 flex justify-between">
             <p class="text-grey font-normal text-base">
-             <s> Rp. 1.499.000 </s>
+             <s> Rp. 1.349.000 </s>
             </p>
             <span>
                 <p class="font-bold text-xl text-[#101828]">
-                    Rp 899.000
+                    Rp 799.000
                 </p>
             </span>
+          </div>
+          <div class="flex justify-center mb-6">
+            <button class=" bg-[#7F56D9] w-44 h-10 lg:w-80 lg:h-12 sm:w-56 sm:h-10 rounded-lg text-white font-semibold text-sm lg:text-base sm:text-sm hover:bg-white hover:text-[#7F56D9] duration-700"> Daftar Sekarang </button>
           </div>
       </div>
     <!-- Price 5 -->
-      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out">
-        <img class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
+      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-white">
+        <img id="iot" class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
         <div class="px-6 py-4">
-          <div class="font-semibold text-xl text-[#101828] mb-2">Web Development Bootcamp</div>
+          <div class="font-semibold text-xl text-[#101828] mb-2">IoT Bootcamp</div>
           <p class="text-grey text-base font-normal">
             Batch 12
           </p>
@@ -324,20 +352,23 @@
         </div>
         <div class="px-6 py-4 flex justify-between">
             <p class="text-grey font-normal text-base">
-             <s> Rp. 1.499.000 </s>
+             <s> Rp. 1.599.000 </s>
             </p>
             <span>
                 <p class="font-bold text-xl text-[#101828]">
-                    Rp 899.000
+                    Rp 949.000
                 </p>
             </span>
+          </div>
+          <div class="flex justify-center mb-6">
+            <button class=" bg-[#7F56D9] w-44 h-10 lg:w-80 lg:h-12 sm:w-56 sm:h-10 rounded-lg text-white font-semibold text-sm lg:text-base sm:text-sm hover:bg-white hover:text-[#7F56D9] duration-700"> Daftar Sekarang </button>
           </div>
       </div>
     <!-- Price 6 -->
-      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out">
-        <img class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
+      <div class="max-w-sm rounded-2xl overflow-hidden shadow-lg mx-auto hover:scale-105 transition-transform duration-700 ease-in-out bg-white">
+        <img id="DigitalContent" class="w-[384px] h-[187px]" src="./assets/pricepic.svg" alt="">
         <div class="px-6 py-4">
-          <div class="font-semibold text-xl text-[#101828] mb-2">Web Development Bootcamp</div>
+          <div class="font-semibold text-xl text-[#101828] mb-2">Digital Content Bootcamp</div>
           <p class="text-grey text-base font-normal">
             Batch 12
           </p>
@@ -362,28 +393,32 @@
         </div>
         <div class="px-6 py-4 flex justify-between">
             <p class="text-grey font-normal text-base">
-             <s> Rp. 1.499.000 </s>
+             <s> Rp. 749.000 </s>
             </p>
             <span>
                 <p class="font-bold text-xl text-[#101828]">
-                    Rp 899.000
+                    Rp 499.000
                 </p>
             </span>
           </div>
+          <div class="flex justify-center mb-6">
+            <button class=" bg-[#7F56D9] w-44 h-10 lg:w-80 lg:h-12 sm:w-56 sm:h-10 rounded-lg text-white font-semibold text-sm lg:text-base sm:text-sm hover:bg-white hover:text-[#7F56D9] duration-700"> Daftar Sekarang </button>
+          </div>
       </div>
-    </section>
+    </div>
+</section>
+
 
 <!-- pagination -->
     <div class="flex justify-center mb-20">
     <div class="flex items-center justify-between  border-gray-200 px-4 py-3 sm:px-6">
           <div>
             <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-              <a href="#" class="relative inline-flex justify-center rounded-l-md px-2 py-2 text-sm text-[#1D2939] gap-3 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 w-[118px]">
-                
+              <a href="#" class="relative inline-flex justify-center rounded-l-md px-0.5 py-2 text-sm text-[#1D2939] gap-3 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 w-[118px]">
                 <img src="./assets/arrow left.svg" alt="">
                 <span >Previous</span>
               </a>
-              <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
+        
               <a href="#" aria-current="page" class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
               <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">2</a>
               <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
@@ -391,18 +426,102 @@
               <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">8</a>
               <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">9</a>
               <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">10</a>
-              <a href="#" class="relative inline-flex justify-center rounded-r-md px-2 py-2 text-sm text-[#1D2939] gap-3 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 w-[118px]">
-                <span >Next</span>
+              <a href="#" class="relative inline-flex justify-center rounded-r-md px-0.5 py-2 text-sm text-[#1D2939] gap-3 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 w-[118px]">
+                <span>Next</span>
                 <img src="./assets/right arrow.svg" alt="">
-                
               </a>
             </nav>
           </div>
         </div>
       </div>
     </div>
+
+    <footer class="flex justify-between text-[#667085] text-base font-semibold py-8 ">
+        <div class="container mx-auto ">
+           
+            <div class="grid grid-cols-2 sm:grid-cols-6 lg:grid-cols-12 gap-4 text-center">
+            <!-- Kolom 1 -->
+            <div class="col-span-2">
+                <!-- Konten Kolom 1 -->
+                <p class="pb-4 text-sm text-[#98A2B3]">Product</p>
+                <p class="pb-4">Overview</p>
+                <p class="pb-4">Features</p>
+                <p class="pb-4">Solutions</p>
+                <p class="pb-4">Tutorials</p>
+                <p class="pb-4">Pricing</p>
+                <p class="pb-4">Releases</p>
+            </div>
+            <!-- Kolom 2 -->
+            <div class="col-span-2">
+                <!-- Konten Kolom 2 -->
+                <p class="pb-4 text-sm text-[#98A2B3]">Company</p>
+                <p class="pb-4">About us</p>
+                <p class="pb-4">Careers</p>
+                <p class="pb-4">Press</p>
+                <p class="pb-4">News</p>
+                <p class="pb-4">Media kit</p>
+                <p class="pb-4">Contact</p>
+            </div>
+            <!-- Kolom 3 -->
+            <div class="col-span-2">
+                <!-- Konten Kolom 3 -->
+                <p class="pb-4 text-sm text-[#98A2B3]">Resources</p>
+                <p class="pb-4">Blog</p>
+                <p class="pb-4">Newsletter</p>
+                <p class="pb-4">Events</p>
+                <p class="pb-4">Help center</p>
+                <p class="pb-4">Tutorials</p>
+                <p class="pb-4">Support</p>
+            </div>
+            <!-- Kolom 4 -->
+            <div class="col-span-2">
+                <!-- Konten Kolom 4 -->
+                <p class="pb-4 text-sm text-[#98A2B3]">Uses cases</p>
+                <p class="pb-4">Startups</p>
+                <p class="pb-4">Enterprise</p>
+                <p class="pb-4">Government</p>
+                <p class="pb-4">Saas</p>
+                <p class="pb-4">Marketplaces</p>
+                <p class="pb-4">Ecommerce</p>
+            </div>
+            <!-- Kolom 5 -->
+            <div class="col-span-2">
+                <!-- Konten Kolom 5 -->
+                <p class="pb-4 text-sm text-[#98A2B3]">Social</p>
+                <p class="pb-4">Twitter</p>
+                <p class="pb-4">LinkedIn</p>
+                <p class="pb-4">Facebook</p>
+                <p class="pb-4">GitHub</p>
+                <p class="pb-4">AngelList</p>
+                <p class="pb-4">Dribbble</p>
+            </div>
+            <!-- Kolom 6 -->
+            <div class="col-span-2">
+                <!-- Konten Kolom 6 -->
+                <p class="pb-4 text-sm text-[#98A2B3]">Legal</p>
+                <p class="pb-4">Terms</p>
+                <p class="pb-4">Privacy</p>
+                <p class="pb-4">Cookies</p>
+                <p class="pb-4">Licences</p>
+                <p class="pb-4">Settings</p>
+                <p class="pb-4">Contact</p>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <section class="px-2 py-8 mb-12">
+        <div class="container mx-auto "> 
+            <div class="flex flex-col sm:flex-row justify-between items-center">
+            <a href="#">
+            <img src="./assets/logo edspert 1.svg" class="order-1 sm:order-2 cursor-pointer">
+            </a>
+            <p class="text-base font-normal text-[#98A2B3]">&copy;  2077 Untitled UI. All rights reserved.</p>
+            </div>
+        </div>    
+    </section>
     
     
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -8,6 +8,7 @@ module.exports = {
       },
       colors:{
         "grey" :'#667085',
+        "brokenwhite" :'#F9FAFB',
       }
     },
   },
